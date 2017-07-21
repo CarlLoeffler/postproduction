@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\uiLogic">
+      <UniqueIdentifier>{47f4d122-f049-4fec-aa28-d1fe41afca75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\uiLogic">
+      <UniqueIdentifier>{243358be-aca8-4d38-8a44-847e24cf16b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wxSF">
+      <UniqueIdentifier>{e61af4a9-21dd-4b7a-be2c-a63f7eb9bd29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wxSF\Source Files">
+      <UniqueIdentifier>{4bdd70c7-41bf-4510-b9f6-2cada5f2a6d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wxSF\Header Files">
+      <UniqueIdentifier>{62a88e71-21dd-4e92-b7e4-626ee6fc3d7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wxSF\serializer_Src">
+      <UniqueIdentifier>{696796ec-dd1f-4229-82bf-7ddb3d9a06ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wxSF\serializer_Hdr">
+      <UniqueIdentifier>{39c7cc09-fb5e-4feb-9e32-1916aa94b986}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_generated.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imageLogic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uiLogic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dispatcher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="node.cpp">
+      <Filter>Source Files\uiLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="nodeGraph.cpp">
+      <Filter>Source Files\uiLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="nodeLink.cpp">
+      <Filter>Source Files\uiLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeLogic.cpp">
+      <Filter>Source Files\uiLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="PPImg.cpp">
+      <Filter>Source Files\uiLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\ArrowBase.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\AutoLayout.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\BitmapShape.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\BitmapShapeXml.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\CanvasHistory.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\CanvasState.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\CircleArrow.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\CircleShape.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\CommonFcn.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\ControlShape.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\CurveShape.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\DiagramManager.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\DiamondArrow.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\DiamondShape.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\EditTextShape.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\EllipseShape.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\FixedRectShape.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\FlexGridShape.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\GridShape.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\LineShape.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\MultiSelRect.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\OpenArrow.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\OrthoShape.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\PolygonShape.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\PolygonShapeXml.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\Printout.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\RectShape.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\RoundOrthoShape.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\RoundRectShape.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\ScaledDC.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\SFEvents.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\ShapeBase.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\ShapeBaseXml.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\ShapeCanvas.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\ShapeDataObject.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\ShapeDockpoint.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\ShapeHandle.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\SolidArrow.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\TextShape.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\TextShapeXml.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\Thumbnail.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\wx_pch.cpp">
+      <Filter>wxSF\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\wxxmlserializer\PropertyIO.cpp">
+      <Filter>wxSF\serializer_Src</Filter>
+    </ClCompile>
+    <ClCompile Include="wxSF\src\wxxmlserializer\XmlSerializer.cpp">
+      <Filter>wxSF\serializer_Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ui_generated.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="imageLogic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dispatcher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="uiLogic.h">
+      <Filter>Header Files\uiLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="nodeLink.h">
+      <Filter>Header Files\uiLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="node.h">
+      <Filter>Header Files\uiLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="PPImg.h">
+      <Filter>Header Files\uiLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeLogic.h">
+      <Filter>Header Files\uiLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="nodeGraph.h">
+      <Filter>Header Files\uiLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\ArrowBase.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\AutoLayout.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\BitmapShape.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\CanvasHistory.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\CanvasState.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\CircleArrow.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\CircleShape.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\CommonFcn.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\ControlShape.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\CurveShape.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\Defs.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\DiagramManager.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\DiamondArrow.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\DiamondShape.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\EditTextShape.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\EllipseShape.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\FixedRectShape.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\FlexGridShape.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\GridShape.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\LineShape.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\MultiSelRect.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\OpenArrow.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\OrthoShape.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\PolygonShape.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\Printout.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\RectShape.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\RoundOrthoShape.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\RoundRectShape.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\ScaledDC.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\SFEvents.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\ShapeBase.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\ShapeCanvas.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\ShapeDataObject.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\ShapeDockpoint.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\ShapeHandle.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\SolidArrow.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\TextShape.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\Thumbnail.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxsf\wxShapeFramework.h">
+      <Filter>wxSF\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\src\wx_pch.h">
+      <Filter>wxSF\Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxxmlserializer\Defs.h">
+      <Filter>wxSF\serializer_Hdr</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxxmlserializer\propertyio.h">
+      <Filter>wxSF\serializer_Hdr</Filter>
+    </ClInclude>
+    <ClInclude Include="wxSF\include\wx\wxxmlserializer\xmlserializer.h">
+      <Filter>wxSF\serializer_Hdr</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

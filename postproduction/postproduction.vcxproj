@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1C40A120-3110-4360-9D70-E43B9053ABA7}</ProjectGuid>
+    <RootNamespace>postproduction</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\Stuff\hackshit\wxWidgets\wxWidgets_source\include;D:\Stuff\hackshit\wxWidgets\wxWidgets_source\lib\vc_lib\mswud;D:\Stuff\hackshit\wxWidgets\wxWidgets_source\samples;D:\Stuff\hackshit\wxWidgets\wxWidgets_source\samples\minimal;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\Stuff\hackshit\wxWidgets\wxWidgets_source\lib\vc_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>wxmsw30ud_core.lib;wxbase30ud.lib;wxtiffd.lib;wxjpegd.lib;wxpngd.lib;wxzlibd.lib;wxregexud.lib;wxexpatd.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;winspool.lib;winmm.lib;shell32.lib;comctl32.lib;ole32.lib;oleaut32.lib;uuid.lib;rpcrt4.lib;advapi32.lib;wsock32.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\Stuff\hackshit\wxWidgets\wxWidgets_source\include;D:\Stuff\hackshit\wxWidgets\wxWidgets_source\lib\vc_x64_lib\mswud;D:\Stuff\hackshit\openCV\homebuilt\install\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>wxmsw30ud_core.lib;wxbase30ud_xml.lib;wxbase30ud.lib;wxtiffd.lib;wxjpegd.lib;wxpngd.lib;wxzlibd.lib;wxregexud.lib;wxexpatd.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;winspool.lib;winmm.lib;shell32.lib;comctl32.lib;ole32.lib;oleaut32.lib;uuid.lib;rpcrt4.lib;advapi32.lib;wsock32.lib;wininet.lib;opencv_calib3d310d.lib;opencv_core310d.lib;opencv_features2d310d.lib;opencv_flann310d.lib;opencv_highgui310d.lib;opencv_imgcodecs310d.lib;opencv_imgproc310d.lib;opencv_ml310d.lib;opencv_objdetect310d.lib;opencv_photo310d.lib;opencv_shape310d.lib;opencv_stitching310d.lib;opencv_superres310d.lib;opencv_ts310d.lib;opencv_video310d.lib;opencv_videoio310d.lib;opencv_videostab310d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\Stuff\hackshit\openCV\homebuilt\install\x64\vc14\lib;D:\Stuff\hackshit\wxWidgets\wxWidgets_source\lib\vc_x64_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="dispatcher.cpp" />
+    <ClCompile Include="imageLogic.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="node.cpp" />
+    <ClCompile Include="nodeGraph.cpp" />
+    <ClCompile Include="nodeLink.cpp" />
+    <ClCompile Include="NodeLogic.cpp" />
+    <ClCompile Include="PPImg.cpp" />
+    <ClCompile Include="uiLogic.cpp" />
+    <ClCompile Include="ui_generated.cpp" />
+    <ClCompile Include="wxSF\src\ArrowBase.cpp" />
+    <ClCompile Include="wxSF\src\AutoLayout.cpp" />
+    <ClCompile Include="wxSF\src\BitmapShape.cpp" />
+    <ClCompile Include="wxSF\src\BitmapShapeXml.cpp" />
+    <ClCompile Include="wxSF\src\CanvasHistory.cpp" />
+    <ClCompile Include="wxSF\src\CanvasState.cpp" />
+    <ClCompile Include="wxSF\src\CircleArrow.cpp" />
+    <ClCompile Include="wxSF\src\CircleShape.cpp" />
+    <ClCompile Include="wxSF\src\CommonFcn.cpp" />
+    <ClCompile Include="wxSF\src\ControlShape.cpp" />
+    <ClCompile Include="wxSF\src\CurveShape.cpp" />
+    <ClCompile Include="wxSF\src\DiagramManager.cpp" />
+    <ClCompile Include="wxSF\src\DiamondArrow.cpp" />
+    <ClCompile Include="wxSF\src\DiamondShape.cpp" />
+    <ClCompile Include="wxSF\src\EditTextShape.cpp" />
+    <ClCompile Include="wxSF\src\EllipseShape.cpp" />
+    <ClCompile Include="wxSF\src\FixedRectShape.cpp" />
+    <ClCompile Include="wxSF\src\FlexGridShape.cpp" />
+    <ClCompile Include="wxSF\src\GridShape.cpp" />
+    <ClCompile Include="wxSF\src\LineShape.cpp" />
+    <ClCompile Include="wxSF\src\MultiSelRect.cpp" />
+    <ClCompile Include="wxSF\src\OpenArrow.cpp" />
+    <ClCompile Include="wxSF\src\OrthoShape.cpp" />
+    <ClCompile Include="wxSF\src\PolygonShape.cpp" />
+    <ClCompile Include="wxSF\src\PolygonShapeXml.cpp" />
+    <ClCompile Include="wxSF\src\Printout.cpp" />
+    <ClCompile Include="wxSF\src\RectShape.cpp" />
+    <ClCompile Include="wxSF\src\RoundOrthoShape.cpp" />
+    <ClCompile Include="wxSF\src\RoundRectShape.cpp" />
+    <ClCompile Include="wxSF\src\ScaledDC.cpp" />
+    <ClCompile Include="wxSF\src\SFEvents.cpp" />
+    <ClCompile Include="wxSF\src\ShapeBase.cpp" />
+    <ClCompile Include="wxSF\src\ShapeBaseXml.cpp" />
+    <ClCompile Include="wxSF\src\ShapeCanvas.cpp" />
+    <ClCompile Include="wxSF\src\ShapeDataObject.cpp" />
+    <ClCompile Include="wxSF\src\ShapeDockpoint.cpp" />
+    <ClCompile Include="wxSF\src\ShapeHandle.cpp" />
+    <ClCompile Include="wxSF\src\SolidArrow.cpp" />
+    <ClCompile Include="wxSF\src\TextShape.cpp" />
+    <ClCompile Include="wxSF\src\TextShapeXml.cpp" />
+    <ClCompile Include="wxSF\src\Thumbnail.cpp" />
+    <ClCompile Include="wxSF\src\wxxmlserializer\PropertyIO.cpp" />
+    <ClCompile Include="wxSF\src\wxxmlserializer\XmlSerializer.cpp" />
+    <ClCompile Include="wxSF\src\wx_pch.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dispatcher.h" />
+    <ClInclude Include="imageLogic.h" />
+    <ClInclude Include="node.h" />
+    <ClInclude Include="nodeGraph.h" />
+    <ClInclude Include="nodeLink.h" />
+    <ClInclude Include="NodeLogic.h" />
+    <ClInclude Include="PPImg.h" />
+    <ClInclude Include="uiLogic.h" />
+    <ClInclude Include="ui_generated.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\ArrowBase.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\AutoLayout.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\BitmapShape.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\CanvasHistory.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\CanvasState.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\CircleArrow.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\CircleShape.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\CommonFcn.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\ControlShape.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\CurveShape.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\Defs.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\DiagramManager.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\DiamondArrow.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\DiamondShape.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\EditTextShape.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\EllipseShape.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\FixedRectShape.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\FlexGridShape.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\GridShape.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\LineShape.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\MultiSelRect.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\OpenArrow.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\OrthoShape.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\PolygonShape.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\Printout.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\RectShape.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\RoundOrthoShape.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\RoundRectShape.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\ScaledDC.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\SFEvents.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\ShapeBase.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\ShapeCanvas.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\ShapeDataObject.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\ShapeDockpoint.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\ShapeHandle.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\SolidArrow.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\TextShape.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\Thumbnail.h" />
+    <ClInclude Include="wxSF\include\wx\wxsf\wxShapeFramework.h" />
+    <ClInclude Include="wxSF\include\wx\wxxmlserializer\Defs.h" />
+    <ClInclude Include="wxSF\include\wx\wxxmlserializer\propertyio.h" />
+    <ClInclude Include="wxSF\include\wx\wxxmlserializer\xmlserializer.h" />
+    <ClInclude Include="wxSF\src\wx_pch.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
