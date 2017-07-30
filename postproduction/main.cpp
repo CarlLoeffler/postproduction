@@ -1,29 +1,20 @@
 /////////////////////////////////////////////////////////////////////////////
-// Name:        minimal.cpp
-// Purpose:     Minimal wxWidgets sample
-// Author:      Julian Smart
-// Modified by:
-// Created:     04/01/98
-// RCS-ID:      $Id$
-// Copyright:   (c) Julian Smart
-// Licence:     wxWindows licence
+// Name:        main.cpp
+// Purpose:     main file, I guess
+// Author:      Carl Loeffler
+// Created:     sometime before 7/26/2017
 /////////////////////////////////////////////////////////////////////////////
 
-// ============================================================================
-// declarations
-// ============================================================================
-
-// ----------------------------------------------------------------------------
-// headers
-// ----------------------------------------------------------------------------
 
 // For compilers that support precompilation, includes "wx/wx.h".
 #include "wx/wxprec.h"
 #include "ui_generated.h"
 
-// ----------------------------------------------------------------------------
-// private classes
-// ----------------------------------------------------------------------------
+//My hacky bullshit
+#include "state.h"
+#include "uiLogic.h"
+
+UIState* uiState;
 
 // Define a new application type, each program should derive a class from wxApp
 class MyApp : public wxApp
@@ -111,6 +102,8 @@ bool MyApp::OnInit()
 	//MyFrame *frame = new MyFrame("Postproduction");
 	MainFrame *frame = new MainFrame("Postproduction");
 
+	//Initialize my state objects
+	uiState = new UIState();
 
 	// and show it (the frames, unlike simple controls, are not shown when
 	// created initially)

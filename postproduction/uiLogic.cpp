@@ -1,13 +1,14 @@
 #pragma once
 
 #include "uiLogic.h"
+#include "util.h"
 
 // ************************************* UIState *************************************************************
 
 UIState::UIState() {
 	nodes = new NodeGraph();
 	//This needs to be a vector of pointers, because we need to be able to NULL elements.
-	//We also can't do the "first element is a pointer to rest of data structure for NULLing purposes" trick because I'm lazy.
+	//We also can't do the "first element is a pointer to rest of contiguous data structure for NULLing purposes" trick because I'm lazy.
 	imgList = new std::vector<PPImg*>();
 }
 
@@ -27,6 +28,14 @@ std::vector<PPImg*>* UIState::getImageList() {
 //Adds image to image list. Adds deep copy of passed image to list.
 //Returns index of image in list, or -1 on failure.
 int UIState::addImage(PPImg* img) {
+	//Make sure img name is unique in list, by appending number if necesarry.
+	//WIP FIX THIS
+	while (getImageByName(img->getName()) != NULL) {
+		char temp[20];
+		incrementString(img->getName(), temp, 20);
+		img->setName(temp);
+	}
+
 	//We're using a vector exclusively for the dynamic resizing, and rolling our own addition and deletion
 	//This is because we value absolute position over order, which no standard c++ container seems to do.
 	int i = 0;
@@ -40,7 +49,7 @@ int UIState::addImage(PPImg* img) {
 	return i;
 }
 
-//Removes image from list by position in list
+//Removes image from list by position in list, and frees the memory.
 void UIState::removeImage(int num) {
 	delete (*imgList)[num];
 	(*imgList)[num] = NULL;
@@ -57,4 +66,14 @@ void UIState::removeNode(int num) {
 	nodes->removeNode(num);
 }
 
+PPImg* UIState::getImageByName(char* query) {
+	for (int i = 0; i < imgList->size(); i++) {
+		if ((*imgList)[i] != NULL) {
+			if ( strcmp( (*imgList)[i]->getName(), query) == 0) {
+				return (*imgList)[i];
+			}
+		}
+	}
+	return NULL;
+}
 

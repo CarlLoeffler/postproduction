@@ -134,6 +134,7 @@
     <ClCompile Include="PPImg.cpp" />
     <ClCompile Include="uiLogic.cpp" />
     <ClCompile Include="ui_generated.cpp" />
+    <ClCompile Include="util.cpp" />
     <ClCompile Include="wxSF\src\ArrowBase.cpp" />
     <ClCompile Include="wxSF\src\AutoLayout.cpp" />
     <ClCompile Include="wxSF\src\BitmapShape.cpp" />
@@ -187,8 +188,10 @@
     <ClInclude Include="nodeLink.h" />
     <ClInclude Include="NodeLogic.h" />
     <ClInclude Include="PPImg.h" />
+    <ClInclude Include="state.h" />
     <ClInclude Include="uiLogic.h" />
     <ClInclude Include="ui_generated.h" />
+    <ClInclude Include="util.h" />
     <ClInclude Include="wxSF\include\wx\wxsf\ArrowBase.h" />
     <ClInclude Include="wxSF\include\wx\wxsf\AutoLayout.h" />
     <ClInclude Include="wxSF\include\wx\wxsf\BitmapShape.h" />

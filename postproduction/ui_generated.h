@@ -29,7 +29,6 @@
 #include <wx/textctrl.h>
 #include <wx/log.h>
 
-
 ///////////////////////////////////////////////////////////////////////////////
 /// Class MyFrame1
 ///////////////////////////////////////////////////////////////////////////////
@@ -44,7 +43,9 @@ private:
 	void onOpen(wxCommandEvent& event);
 	void onSave(wxCommandEvent& event);
 	void onSaveAs(wxCommandEvent& event);
+	void onAddImage(wxCommandEvent& event);
 
+	void updateImageList();
 
 protected:
 	wxMenuBar* m_menubar1;
@@ -113,6 +114,7 @@ enum
 	Save_File = wxID_SAVE,
 	Save_As_File = wxID_SAVEAS,
 	//Minimal_Quit = wxID_EXIT,
+	Add_Image = wxID_ANY,
 
 	// it is important for the id corresponding to the "About" command to have
 	// this standard value as otherwise it won't be handled properly under Mac

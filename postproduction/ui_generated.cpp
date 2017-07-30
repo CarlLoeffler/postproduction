@@ -7,6 +7,9 @@
 #include "wx/wxprec.h"
 #include "ui_generated.h"
 
+//Yep, doing this.
+#include "state.h"
+
 ///////////////////////////////////////////////////////////////////////////
 MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title){
 
@@ -30,6 +33,10 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title){
 	wxMenuItem* saveAsMenuItem;
 	saveAsMenuItem = new wxMenuItem(fileMenu, Save_As_File, wxString(wxT("Save As...")), wxEmptyString, wxITEM_NORMAL);
 	fileMenu->Append(saveAsMenuItem);
+
+	wxMenuItem* addImageMenuItem;
+	addImageMenuItem = new wxMenuItem(fileMenu, Add_Image, wxString(wxT("Add Image")), wxEmptyString, wxITEM_NORMAL);
+	fileMenu->Append(addImageMenuItem);
 
 	m_menubar1->Append(fileMenu, wxT("File"));
 
@@ -204,6 +211,7 @@ wxBEGIN_EVENT_TABLE(MainFrame, wxFrame)
 	EVT_MENU(Open_File, MainFrame::onOpen)
 	EVT_MENU(Save_File, MainFrame::onSave)
 	EVT_MENU(Save_As_File, MainFrame::onSaveAs)
+	EVT_MENU(Add_Image, MainFrame::onAddImage)
 wxEND_EVENT_TABLE()
 
 void MainFrame::OnQuit(wxCommandEvent& WXUNUSED(event))
@@ -243,4 +251,22 @@ void MainFrame::onSave(wxCommandEvent& event) {
 
 void MainFrame::onSaveAs(wxCommandEvent& event) {
 	wxLogMessage("Save As event");
+}
+
+void MainFrame::onAddImage(wxCommandEvent& event) {
+	wxLogMessage("Add Image event");
+	uiState->addImage(new PPImg());
+	updateImageList();
+}
+
+//This is a bit shitty, but it's a consequence of me not just using the wx classes to hold my data
+//Clears the contents of the listBox and rebuilds it using the backend state object
+void MainFrame::updateImageList() {
+	imgListBox->Clear();
+	std::vector<PPImg*>* state = uiState->getImageList();
+	for (int i = 0; i < state->size(); i++) {
+		if ((*state)[i] != NULL) {
+			imgListBox->Append(wxString((*state)[i]->getName()));
+		}
+	}
 }

@@ -19,6 +19,7 @@ class UIState {
 		std::vector<PPImg*>* getImageList();
 		int addImage(PPImg* img);
 		void removeImage(int num);
+		PPImg* getImageByName(char* query);
 
 		//Track state of node editor
 		int addNode();

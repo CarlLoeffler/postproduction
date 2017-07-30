@@ -198,6 +198,9 @@
     <ClCompile Include="wxSF\src\wxxmlserializer\XmlSerializer.cpp">
       <Filter>wxSF\serializer_Src</Filter>
     </ClCompile>
+    <ClCompile Include="util.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ui_generated.h">
@@ -355,6 +358,12 @@
     </ClInclude>
     <ClInclude Include="wxSF\include\wx\wxxmlserializer\xmlserializer.h">
       <Filter>wxSF\serializer_Hdr</Filter>
+    </ClInclude>
+    <ClInclude Include="state.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
