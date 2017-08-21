@@ -56,6 +56,14 @@ void UIState::removeImage(int num) {
 	nodes->sanitize(num);
 }
 
+//Removes image from list by name, and frees memory
+void UIState::removeImage(char* name) {
+	int index = getImageIndexByName(name);
+	if (!(index < 0)) {
+		removeImage(index);
+	}
+}
+
 //Add generic node to node editor. Returns number of node, or -1 on failure.
 int UIState::addNode() {
 	return nodes->addNode();
@@ -67,13 +75,21 @@ void UIState::removeNode(int num) {
 }
 
 PPImg* UIState::getImageByName(char* query) {
+	int index = getImageIndexByName(query);
+	if (index < 0) {
+		return NULL;
+	}else {
+		return (*imgList)[index];
+	}
+}
+
+int UIState::getImageIndexByName(char* query) {
 	for (int i = 0; i < imgList->size(); i++) {
 		if ((*imgList)[i] != NULL) {
-			if ( strcmp( (*imgList)[i]->getName(), query) == 0) {
-				return (*imgList)[i];
+			if (strcmp((*imgList)[i]->getName(), query) == 0) {
+				return i;
 			}
 		}
 	}
-	return NULL;
+	return -1;
 }
-

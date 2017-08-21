@@ -21,7 +21,9 @@ PPImg::PPImg(cv::Mat* img) {
 
 //cleaning up after ourselves
 PPImg::~PPImg() {
-	data->release();	//tell openCV to clear the reference
+	if (data != NULL) {
+		data->release();	//tell openCV to clear the reference
+	}
 }
 
 //Sets display name of image

@@ -15,6 +15,8 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title){
 
 	this->SetSizeHints(wxDefaultSize, wxDefaultSize);
 
+//----------------------------------- Main menu box setup ---------------------------------------------------------------------------------
+
 	m_menubar1 = new wxMenuBar(0);
 	fileMenu = new wxMenu();
 
@@ -51,6 +53,8 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title){
 
 	this->SetMenuBar(m_menubar1);
 
+//----------------------------------- toolbar setup ---------------------------------------------------------------------------------
+
 	m_toolBar1 = this->CreateToolBar(wxTB_HORIZONTAL, wxID_ANY);
 	
 	//m_tool1 = m_toolBar1->AddTool(wxID_UNDO, wxT("tool"), wxNullBitmap, wxNullBitmap, wxITEM_NORMAL, wxEmptyString, wxEmptyString, NULL);
@@ -59,7 +63,12 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title){
 
 	m_toolBar1->Realize();
 
+//----------------------------------- status bar setup ---------------------------------------------------------------------------------
+
 	m_statusBar1 = this->CreateStatusBar(1, wxST_SIZEGRIP, wxID_ANY);
+
+//----------------------------------- layout setup ---------------------------------------------------------------------------------
+
 	wxBoxSizer* topSizer;
 	topSizer = new wxBoxSizer(wxVERTICAL);
 
@@ -77,6 +86,8 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title){
 	wxBoxSizer* topLeftSizer;
 	topLeftSizer = new wxBoxSizer(wxVERTICAL);
 
+//----------------------------------- main display setup ---------------------------------------------------------------------------------
+
 	mainDisplayNotebook = new wxNotebook(topLeftPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0);
 	m_panel16 = new wxPanel(mainDisplayNotebook, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL);
 	wxBoxSizer* bSizer17;
@@ -90,6 +101,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title){
 
 	topLeftSizer->Add(mainDisplayNotebook, 1, wxEXPAND | wxALL, 5);
 
+//----------------------------------- layout setup ---------------------------------------------------------------------------------
 
 	topLeftPanel->SetSizer(topLeftSizer);
 	topLeftPanel->Layout();
@@ -97,6 +109,8 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title){
 	botLeftPanel = new wxPanel(leftSplitter, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL);
 	wxBoxSizer* botLeftSizer;
 	botLeftSizer = new wxBoxSizer(wxVERTICAL);
+
+//----------------------------------- state notebook setup ---------------------------------------------------------------------------------
 
 	//state is bottom left segment of UI, currently holds node editor and log
 	stateNoteBook = new wxNotebook(botLeftPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0);
@@ -123,14 +137,13 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title){
 
 	botLeftSizer->Add(stateNoteBook, 1, wxEXPAND | wxALL, 5);
 
-	
+//----------------------------------- layout setup ---------------------------------------------------------------------------------
 
 	botLeftPanel->SetSizer(botLeftSizer);
 	botLeftPanel->Layout();
 	botLeftSizer->Fit(botLeftPanel);
 	leftSplitter->SplitHorizontally(topLeftPanel, botLeftPanel, 0);
 	leftSizer->Add(leftSplitter, 1, wxEXPAND, 5);
-
 
 	leftPanel->SetSizer(leftSizer);
 	leftPanel->Layout();
@@ -146,9 +159,25 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title){
 	wxBoxSizer* topRightSizer;
 	topRightSizer = new wxBoxSizer(wxVERTICAL);
 
+//----------------------------------- Image list box setup ---------------------------------------------------------------------------------
+
 	imgListBox = new wxListBox(topRightPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, 0);
+
+	//Set up the popup menu 
+	leftClickPopupMenu = new wxMenu(wxT(""));
+	leftClickPopupMenu->Append(imgListPopup_RenameImg, wxT("Rename"), wxT(""), wxITEM_NORMAL);
+	leftClickPopupMenu->Append(imgListPopup_DeleteImg, wxT("Delete"), wxT(""), wxITEM_NORMAL);
+	leftClickPopupMenu->Append(imgListPopup_OpenFileLocationImg, wxT("Open file location"), wxT(""), wxITEM_NORMAL);
+	leftClickPopupMenu->Enable(imgListPopup_OpenFileLocationImg, false);
+
+	//Bind the function as mouse handler? Who knows, it's cargo cult code.
+	//imgListBox->Connect(imgListBox->GetId(), wxEVT_RIGHT_UP, wxMouseEventHandler(MainFrame::onImgListRightClick), NULL, this);
+	imgListBox->Connect(imgListBox->GetId(), wxEVT_RIGHT_UP, wxMouseEventHandler(MainFrame::onImgListRightClick), imgListBox, this);
+
+	//Add the listbox to the UI
 	topRightSizer->Add(imgListBox, 1, wxALL | wxEXPAND, 5);
 
+//----------------------------------- Top right layout setup ---------------------------------------------------------------------------------
 
 	topRightPanel->SetSizer(topRightSizer);
 	topRightPanel->Layout();
@@ -157,29 +186,35 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title){
 	wxBoxSizer* botRightSizer;
 	botRightSizer = new wxBoxSizer(wxVERTICAL);
 
+//----------------------------------- property notebook setup ---------------------------------------------------------------------------------
+
 	controlsNotebook = new wxNotebook(botRightPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0);
 	nodePropPanel = new wxPanel(controlsNotebook, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL);
 	wxBoxSizer* propertiesSizer;
 	propertiesSizer = new wxBoxSizer(wxVERTICAL);
 
-
+	//Layout stuff
 	nodePropPanel->SetSizer(propertiesSizer);
 	nodePropPanel->Layout();
 	propertiesSizer->Fit(nodePropPanel);
+	
+	//Adding properties page
 	controlsNotebook->AddPage(nodePropPanel, wxT("Properties"), false);
 	displayOptPanel = new wxPanel(controlsNotebook, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL);
 	wxBoxSizer* displayOptSizer;
 	displayOptSizer = new wxBoxSizer(wxVERTICAL);
 
-
+	//layout!
 	displayOptPanel->SetSizer(displayOptSizer);
 	displayOptPanel->Layout();
 	displayOptSizer->Fit(displayOptPanel);
+	
+	//adding display options page
 	controlsNotebook->AddPage(displayOptPanel, wxT("Display"), false);
 
 	botRightSizer->Add(controlsNotebook, 1, wxEXPAND | wxALL, 5);
 
-
+	//Layout!
 	botRightPanel->SetSizer(botRightSizer);
 	botRightPanel->Layout();
 	botRightSizer->Fit(botRightPanel);
@@ -212,6 +247,11 @@ wxBEGIN_EVENT_TABLE(MainFrame, wxFrame)
 	EVT_MENU(Save_File, MainFrame::onSave)
 	EVT_MENU(Save_As_File, MainFrame::onSaveAs)
 	EVT_MENU(Add_Image, MainFrame::onAddImage)
+
+	//These are right click menu items for the image list
+	EVT_MENU(imgListPopup_RenameImg, MainFrame::onImgListRenameImg)
+	EVT_MENU(imgListPopup_DeleteImg, MainFrame::onImgListDeleteImg)
+	EVT_MENU(imgListPopup_OpenFileLocationImg, MainFrame::onImgListOpenFileLocationImg)
 wxEND_EVENT_TABLE()
 
 void MainFrame::OnQuit(wxCommandEvent& WXUNUSED(event))
@@ -269,4 +309,36 @@ void MainFrame::updateImageList() {
 			imgListBox->Append(wxString((*state)[i]->getName()));
 		}
 	}
+}
+
+
+void MainFrame::onImgListRightClick(wxMouseEvent& event) {
+	wxPoint mousePos = imgListBox->ScreenToClient(wxGetMousePosition());
+	if (imgListBox->HitTest(mousePos) != wxNOT_FOUND) {
+		imgListBox->SetSelection(imgListBox->HitTest(mousePos));
+		imgListBox->PopupMenu(leftClickPopupMenu);
+	}else if (imgListBox->GetSelection() != wxNOT_FOUND) {
+		imgListBox->PopupMenu(leftClickPopupMenu);
+	}
+}
+
+void MainFrame::onImgListRenameImg(wxCommandEvent& event) {
+	wxLogMessage("Rename image event");
+	char name[20];
+	strncpy(name, (const char*)(imgListBox->GetString(imgListBox->GetSelection()).ToAscii()), 20);
+	PPImg* img = uiState->getImageByName(name);
+
+	updateImageList();
+}
+
+void MainFrame::onImgListDeleteImg(wxCommandEvent& event) {
+	wxLogMessage("delete image event");
+	char name[20];
+	strncpy(name, (const char*)(imgListBox->GetString(imgListBox->GetSelection()).ToAscii()), 20);
+	uiState->removeImage(name);
+	updateImageList();
+}
+
+void MainFrame::onImgListOpenFileLocationImg(wxCommandEvent& event) {
+	wxLogMessage("Open file location image event");
 }

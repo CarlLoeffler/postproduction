@@ -25,6 +25,7 @@
 #include <wx/notebook.h>
 #include <wx/splitter.h>
 #include <wx/listbox.h>
+#include <wx/editlbox.h>
 #include <wx/frame.h>
 #include <wx/textctrl.h>
 #include <wx/log.h>
@@ -44,6 +45,11 @@ private:
 	void onSave(wxCommandEvent& event);
 	void onSaveAs(wxCommandEvent& event);
 	void onAddImage(wxCommandEvent& event);
+
+	void onImgListRightClick(wxMouseEvent& event);
+	void onImgListRenameImg(wxCommandEvent& event);
+	void onImgListDeleteImg(wxCommandEvent& event);
+	void onImgListOpenFileLocationImg(wxCommandEvent& event);
 
 	void updateImageList();
 
@@ -78,6 +84,7 @@ protected:
 	wxPanel* nodePropPanel;
 	wxPanel* displayOptPanel;
 	wxLogTextCtrl* logCtrl;
+	wxMenu *leftClickPopupMenu;
 
 public:
 	MainFrame(const wxString& title);
@@ -110,11 +117,14 @@ enum
 {
 	// menu items
 	Open_Project = wxID_OPEN,
-	Open_File = wxID_EXIT,
+	Open_File = 2000,
 	Save_File = wxID_SAVE,
 	Save_As_File = wxID_SAVEAS,
 	//Minimal_Quit = wxID_EXIT,
-	Add_Image = wxID_ANY,
+	Add_Image = 2001,
+	imgListPopup_DeleteImg,
+	imgListPopup_RenameImg,
+	imgListPopup_OpenFileLocationImg
 
 	// it is important for the id corresponding to the "About" command to have
 	// this standard value as otherwise it won't be handled properly under Mac

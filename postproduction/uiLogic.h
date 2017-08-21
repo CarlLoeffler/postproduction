@@ -20,6 +20,8 @@ class UIState {
 		int addImage(PPImg* img);
 		void removeImage(int num);
 		PPImg* getImageByName(char* query);
+		int getImageIndexByName(char* query);
+		void removeImage(char* name);
 
 		//Track state of node editor
 		int addNode();
