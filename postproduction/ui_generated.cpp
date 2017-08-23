@@ -161,7 +161,14 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title){
 
 //----------------------------------- Image list box setup ---------------------------------------------------------------------------------
 
-	imgListBox = new wxListBox(topRightPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, 0);
+	//imgListBox = new wxListBox(topRightPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, 0);
+	//m_item_list = new wxListCtrl(mainPane, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLC_REPORT);
+	imgListBox = new wxListCtrl(topRightPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLC_REPORT|wxLC_NO_HEADER|wxLC_SINGLE_SEL, wxDefaultValidator, wxEmptyString);
+	wxListItem col;
+	col.SetId(0);
+	col.SetText("nodes");
+	imgListBox->InsertColumn(0, col);
+
 
 	//Set up the popup menu 
 	leftClickPopupMenu = new wxMenu(wxT(""));
@@ -170,9 +177,9 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(NULL, wxID_ANY, title){
 	leftClickPopupMenu->Append(imgListPopup_OpenFileLocationImg, wxT("Open file location"), wxT(""), wxITEM_NORMAL);
 	leftClickPopupMenu->Enable(imgListPopup_OpenFileLocationImg, false);
 
-	//Bind the function as mouse handler? Who knows, it's cargo cult code.
-	//imgListBox->Connect(imgListBox->GetId(), wxEVT_RIGHT_UP, wxMouseEventHandler(MainFrame::onImgListRightClick), NULL, this);
-	imgListBox->Connect(imgListBox->GetId(), wxEVT_RIGHT_UP, wxMouseEventHandler(MainFrame::onImgListRightClick), imgListBox, this);
+	//Bind the function that displays it as mouse handler
+	imgListBox->Connect(imgListBox->GetId(), wxEVT_LIST_ITEM_RIGHT_CLICK, wxMouseEventHandler(MainFrame::onImgListRightClick), NULL, this);
+	imgListBox->Connect(imgListBox->GetId(), wxEVT_LIST_END_LABEL_EDIT, wxEventHandler(MainFrame::onImgListLabelEdit), NULL, this);
 
 	//Add the listbox to the UI
 	topRightSizer->Add(imgListBox, 1, wxALL | wxEXPAND, 5);
@@ -302,39 +309,47 @@ void MainFrame::onAddImage(wxCommandEvent& event) {
 //This is a bit shitty, but it's a consequence of me not just using the wx classes to hold my data
 //Clears the contents of the listBox and rebuilds it using the backend state object
 void MainFrame::updateImageList() {
-	imgListBox->Clear();
+	imgListBox->DeleteAllItems();
 	std::vector<PPImg*>* state = uiState->getImageList();
 	for (int i = 0; i < state->size(); i++) {
 		if ((*state)[i] != NULL) {
-			imgListBox->Append(wxString((*state)[i]->getName()));
+			wxListItem temp;
+			temp.SetId(i);
+			temp.SetText((*state)[i]->getName());
+			imgListBox->InsertItem(temp);
 		}
 	}
 }
 
 
 void MainFrame::onImgListRightClick(wxMouseEvent& event) {
-	wxPoint mousePos = imgListBox->ScreenToClient(wxGetMousePosition());
-	if (imgListBox->HitTest(mousePos) != wxNOT_FOUND) {
-		imgListBox->SetSelection(imgListBox->HitTest(mousePos));
-		imgListBox->PopupMenu(leftClickPopupMenu);
-	}else if (imgListBox->GetSelection() != wxNOT_FOUND) {
+	if (imgListBox->GetSelectedItemCount() != 0) {
 		imgListBox->PopupMenu(leftClickPopupMenu);
 	}
 }
 
 void MainFrame::onImgListRenameImg(wxCommandEvent& event) {
 	wxLogMessage("Rename image event");
-	char name[20];
-	strncpy(name, (const char*)(imgListBox->GetString(imgListBox->GetSelection()).ToAscii()), 20);
-	PPImg* img = uiState->getImageByName(name);
+	long selected = imgListBox->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
 
+	imgListBox->EditLabel(selected, CLASSINFO(wxTextCtrl));
+}
+
+void MainFrame::onImgListLabelEdit(wxEvent& event) {
+	wxLogMessage("Image list edit event");
+	char name[20];
+	long selected = imgListBox->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
+	strncpy(name, (const char*)(imgListBox->GetItemText(selected).ToAscii()), 20);
+	PPImg* img = uiState->getImageByName(name);
+	img->setName(name);
 	updateImageList();
 }
 
 void MainFrame::onImgListDeleteImg(wxCommandEvent& event) {
 	wxLogMessage("delete image event");
 	char name[20];
-	strncpy(name, (const char*)(imgListBox->GetString(imgListBox->GetSelection()).ToAscii()), 20);
+	long selected = imgListBox->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
+	strncpy(name, (const char*)(imgListBox->GetItemText(selected).ToAscii()), 20);
 	uiState->removeImage(name);
 	updateImageList();
 }

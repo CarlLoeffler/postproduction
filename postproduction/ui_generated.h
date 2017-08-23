@@ -29,6 +29,7 @@
 #include <wx/frame.h>
 #include <wx/textctrl.h>
 #include <wx/log.h>
+#include <wx/listctrl.h>
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class MyFrame1
@@ -47,6 +48,7 @@ private:
 	void onAddImage(wxCommandEvent& event);
 
 	void onImgListRightClick(wxMouseEvent& event);
+	void onImgListLabelEdit(wxEvent& event);
 	void onImgListRenameImg(wxCommandEvent& event);
 	void onImgListDeleteImg(wxCommandEvent& event);
 	void onImgListOpenFileLocationImg(wxCommandEvent& event);
@@ -78,7 +80,7 @@ protected:
 	wxPanel* rightPanel;
 	wxSplitterWindow* rightSplitter;
 	wxPanel* topRightPanel;
-	wxListBox* imgListBox;
+	wxListCtrl* imgListBox;
 	wxPanel* botRightPanel;
 	wxNotebook* controlsNotebook;
 	wxPanel* nodePropPanel;
